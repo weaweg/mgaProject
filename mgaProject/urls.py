@@ -1,3 +1,4 @@
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path
 
 handler400 = 'api.views.custom400'
@@ -8,3 +9,5 @@ handler500 = 'api.views.custom500'
 urlpatterns = [
     path("api", include('api.urls')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()

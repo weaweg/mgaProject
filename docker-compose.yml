@@ -8,10 +8,10 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   api:
-    build: https://github.com/weaweg/mgaProject
+    build: .
     command: sh -c "python manage.py makemigrations &&
                     python manage.py migrate &&
-                    python manage.py runserver 0.0.0.0:8000"
+                    gunicorn --config gunicorn_config.py mgaProject.wsgi:application"
     volumes:
       - .:/code
     ports:
