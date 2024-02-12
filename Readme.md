@@ -9,3 +9,4 @@ Aby uruchomić kontener i aplikację należy użyć polecenie
 * docker compose run
 
 Uwierzytelnianie odbywa się za pomocą Basic Authentication
+Adres do komunikacji to http://127.0.0.1:8000/api
